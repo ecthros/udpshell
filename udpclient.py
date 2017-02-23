@@ -27,7 +27,9 @@ while True:
 
 	sock2.sendto(command, (send_ip, send_port))
 
-
-	response, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
-
-	print(response)
+	try:
+		response, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
+		print(response)
+		
+	except KeyboardInterrupt:
+		pass
