@@ -11,10 +11,12 @@ if(len(sys.argv) < 4):
 	exit(1)
 
 recv_ip = "0.0.0.0" 
-recv_port = int(sys.argv[1])
+recv_port = int(sys.argv[1]) #5006
 
-send_ip = sys.argv[2]
-send_port = int(sys.argv[3])
+send_ip = sys.argv[2] #127.0.0.1
+send_port = int(sys.argv[3]) #5005
+
+print("Your client should be: python udpclient.py " + sys.argv[3] + " " + sys.argv[2] + " " + sys.argv[1])
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
 sock.bind((recv_ip, recv_port))
